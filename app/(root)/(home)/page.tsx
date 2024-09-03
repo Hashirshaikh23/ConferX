@@ -23,7 +23,7 @@ const Home = () => {
   // const date = (new Intl.DateTimeFormat('en-US', {dateStyle: 'full'})).format(now);
   const date = new Intl.DateTimeFormat('en-US', {
     dateStyle: 'full',
-    timeZone: userTimeZone,
+    timeZone: 'Asia/Kolkata', // Set to IST
   }).format(now);
 
   // const ampm = hours >= 12 ? 'PM' : 'AM';
