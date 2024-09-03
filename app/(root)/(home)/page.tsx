@@ -9,10 +9,16 @@ const Home = () => {
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   
   // const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
-  const time = now.toLocaleTimeString('en-US', {
+  // const time = now.toLocaleTimeString('en-US', {
+  //   hour: '2-digit',
+  //   minute: '2-digit',
+  //   timeZone: userTimeZone,
+  // });
+  const time = now.toLocaleTimeString(undefined, {
     hour: '2-digit',
     minute: '2-digit',
-    timeZone: userTimeZone,
+    hour12: true,
+    timeZoneName: 'short',
   });
   // const date = (new Intl.DateTimeFormat('en-US', {dateStyle: 'full'})).format(now);
   const date = new Intl.DateTimeFormat('en-US', {
