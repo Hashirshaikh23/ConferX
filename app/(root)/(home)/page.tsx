@@ -5,9 +5,20 @@ const Home = () => {
   const now = new Date();
   // let hours = now.getHours();
   // let minutes = now.getMinutes();
+
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   
-  const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
-  const date = (new Intl.DateTimeFormat('en-US', {dateStyle: 'full'})).format(now);
+  // const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+  const time = now.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: userTimeZone,
+  });
+  // const date = (new Intl.DateTimeFormat('en-US', {dateStyle: 'full'})).format(now);
+  const date = new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'full',
+    timeZone: userTimeZone,
+  }).format(now);
 
   // const ampm = hours >= 12 ? 'PM' : 'AM';
   // hours = hours % 12;
